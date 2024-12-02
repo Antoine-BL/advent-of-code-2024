@@ -70,20 +70,14 @@ void Day1_2(void) {
 	int *left, *right;
 	parse_file1(&left, &right, &length);
 
-	sort(left, length);
-	sort(right, length);
-
 	int sum = 0;
-	int j = 0;
 	for (int i = 0; i < length; i++) {
 		int searching = left[i];
 
 		int n_occurrences = 0;
-		for (;j < length; j++) {
+		for (int j = 0;j < length; j++) {
 			if (left[i] == right[j]) {
 				n_occurrences++;
-			} else if (left[i] < right[j]) {
-				break;
 			}
 		}
 		sum += n_occurrences * searching;
