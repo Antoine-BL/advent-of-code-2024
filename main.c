@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include <day1.h>
+#include <time.h>
 
 const int IMPLEMENTED_SOLUTIONS = 2;
 
@@ -31,7 +32,12 @@ int main(int argc, char ** argv) {
 		Day1_2,
 	};
 	
+	float startTime = (float)clock()/CLOCKS_PER_SEC;
 	solutions[index]();
+	float endTime = (float)clock()/CLOCKS_PER_SEC;
+
+	float timeElapsed = endTime - startTime;
+	printf("time: %f\n", timeElapsed * 1000);
 
 	return 0;
 }

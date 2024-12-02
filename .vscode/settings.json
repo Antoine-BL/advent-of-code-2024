@@ -1,0 +1,18 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+	"clang.cflags": [
+		"-I./include",
+		"-I./../include",
+		"-c",
+		"-std=c11",
+		"-Werror",
+		"-Wall",
+		"-fms-extensions"
+	],
+	"files.associations": {
+		"day1.h": "c",
+		"stdio.h": "c",
+		"utils.h": "c",
+		"stdlib.h": "c"
+	}
+}

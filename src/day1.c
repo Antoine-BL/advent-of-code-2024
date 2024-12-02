@@ -7,32 +7,6 @@
 #include <day1.h>
 #define LINE_SIZE 256
 
-#define BUF_SIZE 65536
-
-int countlines(FILE* file) {
-    char buf[BUF_SIZE];
-    int counter = 0;
-    int i = 0;
-
-    for (;;) {
-        size_t res = fread(buf, 1, BUF_SIZE, file);
-        if (ferror(file)) return -1;
-
-        for (i = 0; i < res; i++) {
-            if (buf[i] == '\n')
-                counter++;
-        }
-
-        if (feof(file)) {
-            break;
-        }
-    }
-
-	rewind(file);
-
-    return counter;
-}
-
 void parse_file1(int** left_out, int** right_out, int* file_size) {
 	FILE* file = fopen("../data/Day-1-1.txt", "r");
 	if (!file) {
@@ -100,13 +74,16 @@ void Day1_2(void) {
 	sort(right, length);
 
 	int sum = 0;
+	int j = 0;
 	for (int i = 0; i < length; i++) {
 		int searching = left[i];
 
 		int n_occurrences = 0;
-		for (int j = 0; j < length; j++) {
+		for (;j < length; j++) {
 			if (left[i] == right[j]) {
 				n_occurrences++;
+			} else if (left[i] < right[j]) {
+				break;
 			}
 		}
 		sum += n_occurrences * searching;
