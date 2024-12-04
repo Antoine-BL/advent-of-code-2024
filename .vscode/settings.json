@@ -13,6 +13,9 @@
 		"day1.h": "c",
 		"stdio.h": "c",
 		"utils.h": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"stdbool.h": "c",
+		"time.h": "c",
+		"day2.h": "c"
 	}
 }

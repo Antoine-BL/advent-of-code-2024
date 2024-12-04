@@ -7,8 +7,8 @@
 #include <day1.h>
 #define LINE_SIZE 256
 
-void parse_file1(int** left_out, int** right_out, int* file_size) {
-	FILE* file = fopen("../data/Day-1-1.txt", "r");
+static void parse_file(int** left_out, int** right_out, int* file_size) {
+	FILE* file = fopen("../data/Day-2.txt", "r");
 	if (!file) {
 		exit(1);
 	}
@@ -49,7 +49,7 @@ void sort(int* arr, int c) {
 void Day1_1(void) {
 	int length;
 	int *left, *right;
-	parse_file1(&left, &right, &length);
+	parse_file(&left, &right, &length);
 
 	sort(left, length);
 	sort(right, length);
@@ -68,7 +68,7 @@ void Day1_1(void) {
 void Day1_2(void) {
 	int length;
 	int *left, *right;
-	parse_file1(&left, &right, &length);
+	parse_file(&left, &right, &length);
 
 	int sum = 0;
 	for (int i = 0; i < length; i++) {
