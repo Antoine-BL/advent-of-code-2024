@@ -3,9 +3,10 @@
 
 #include <day1.h>
 #include <day2.h>
+#include <day3.h>
 #include <time.h>
 
-const int IMPLEMENTED_SOLUTIONS = 4;
+const int IMPLEMENTED_SOLUTIONS = 6;
 
 int main(int argc, char ** argv) {
 	if (argc != 3) {
@@ -33,6 +34,8 @@ int main(int argc, char ** argv) {
 		Day1_2,
 		Day2_1,
 		Day2_2,
+		Day3_1,
+		Day3_2
 	};
 	
 	float startTime = (float)clock()/CLOCKS_PER_SEC;
